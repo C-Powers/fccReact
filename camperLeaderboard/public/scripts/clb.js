@@ -20,10 +20,27 @@ const Header = React.createClass({
 })
 
 const ShowData = React.createClass({
-  render () {
+  render: function () {
+    let theList;
+    if (this.props.data && this.props.data.length){
+      theList = this.props.data.map(function(user, pos) {
+        return (
+          <div key={user.username} className="row-user">
+            <div className="col"> {pos} </div>
+            <div className="col"> <img src={user.img}/> </div>
+            <div className="col"> {user.username} </div>
+            <div className="col"> {user.alltime} </div>
+          </div>
+        )
+      })
+    } else {
+      console.log("this.props.data", this.props.data)
+      //console.log("this.props.data.length", this.props.data.length)
+      theList = <div> There is No :[ data </div>
+    }
     return (
       <div className="show-data">
-        <p> {JSON.stringify(this.props.users[0], null, 2)} </p>
+        {theList}
       </div>
     )
   }
@@ -54,7 +71,7 @@ const Body = React.createClass({
       <div className="content">
         {JSON.stringify(this.state.data[0], null, 2)}
         <p> ====== </p>
-        <ShowData users={this.state.data}/>
+        <ShowData data={this.state.data} />
       </div>
     )
   }
