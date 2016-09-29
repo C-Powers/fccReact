@@ -19,14 +19,16 @@
   background-color: #bdc3c7;
   padding: 3em;
   border-radius: 20px;
+  font-size: 1.75em;
 }
 
-.table {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.table-header {
+  font-weight: bold;
+  border-bottom: 2px solid #c0392b;
 }
 
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
 .row-user {
   @include flexbox((
     display: flex,
@@ -35,8 +37,15 @@
   ));
   margin: 0 0 3em 0;
   img {
-    width: 50px;
+    width: 75px;
     height: auto;
     border-radius: 5px;
+  }
+  #{$a-tags} {
+    color: #c0392b;
+    text-decoration: none;
+  }
+  #{$a-tags-hover} {
+    color: #2c3e50;
   }
 }

@@ -83,16 +83,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-color: #bdc3c7;
   padding: 3em;
   border-radius: 20px;
+  font-size: 1.75em;
 }
 
-/* line 24, ../sass/style.scss */
-.table {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+/* line 25, ../sass/style.scss */
+.table-header {
+  font-weight: bold;
+  border-bottom: 2px solid #c0392b;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 .row-user {
   display: -webkit-flex;
   -webkit-flex-direction: row;
@@ -102,9 +102,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   justify-content: space-between;
   margin: 0 0 3em 0;
 }
-/* line 37, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 .row-user img {
-  width: 50px;
+  width: 75px;
   height: auto;
   border-radius: 5px;
+}
+/* line 44, ../sass/style.scss */
+.row-user a, .row-user a:active, .row-user a:hover, .row-user a:visited {
+  color: #c0392b;
+  text-decoration: none;
+}
+/* line 48, ../sass/style.scss */
+.row-user a:active, .row-user a:hover {
+  color: #2c3e50;
 }

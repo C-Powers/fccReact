@@ -4,15 +4,10 @@ const Header = React.createClass({
     return (
       <div className="jumbotron">
         <div className="container">
+          <a href="https://www.freecodecamp.com/" target="_blank">
            <img className="fcclogo" src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp logo" />
+          </a>
           <h1>Top Campers</h1>
-          <p>...</p>
-          <p><a
-              className="btn btn-primary btn-lg"
-              href="#"
-              role="button">
-             Learn more
-           </a></p>
         </div>
       </div>
      )
@@ -26,7 +21,7 @@ const ShowData = React.createClass({
       theList = this.props.data.map(function(user, pos) {
         return (
           <div key={user.username} className="row-user">
-            <div className="col"> {pos} </div>
+            <div className="col"> {pos+1} </div>
             <div className="col"> <img src={user.img}/> </div>
             <div className="col">
               <a href= {'https://www.freecodecamp.com/' + user.username} target="_blank"> {user.username} </a>
@@ -38,14 +33,14 @@ const ShowData = React.createClass({
     } else {
       console.log("this.props.data", this.props.data)
       //console.log("this.props.data.length", this.props.data.length)
-      theList = <div> Loading...? </div>
+      theList = <div> Loading... </div>
     }
     return (
       <div className="show-data">
-        <div className="row-user">
-        <div className="col"> # </div>
-        <div className="col"> Camper </div>
-        <div className="col"> Points </div>
+        <div className="row-user table-header">
+          <div className="col"> # </div>
+          <div className="col"> Camper </div>
+          <div className="col"> All Time Points </div>
         </div>
         {theList}
       </div>
