@@ -1,7 +1,7 @@
 @import "compass/reset";
 @import "compass/css3";
 
-body {
+.app {
   background-color: #bdc3c7;
 }
 
@@ -16,10 +16,36 @@ body {
 }
 
 .content {
-  background-color: #1abc9c;
+  background-color: #bdc3c7;
+  padding: 3em;
+  border-radius: 20px;
+  font-size: 1.75em;
 }
 
+.table-header {
+  font-weight: bold;
+  border-bottom: 2px solid #c0392b;
+}
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
 .row-user {
-  display: flex;
-  flex-direction: row;
+  @include flexbox((
+    display: flex,
+    flex-direction: row,
+    justify-content: space-between
+  ));
+  margin: 0 0 3em 0;
+  img {
+    width: 75px;
+    height: auto;
+    border-radius: 5px;
+  }
+  #{$a-tags} {
+    color: #c0392b;
+    text-decoration: none;
+  }
+  #{$a-tags-hover} {
+    color: #2c3e50;
+  }
 }

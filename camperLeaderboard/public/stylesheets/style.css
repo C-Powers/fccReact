@@ -64,7 +64,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 4, ../sass/style.scss */
-body {
+.app {
   background-color: #bdc3c7;
 }
 
@@ -80,11 +80,40 @@ body {
 
 /* line 18, ../sass/style.scss */
 .content {
-  background-color: #1abc9c;
+  background-color: #bdc3c7;
+  padding: 3em;
+  border-radius: 20px;
+  font-size: 1.75em;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 25, ../sass/style.scss */
+.table-header {
+  font-weight: bold;
+  border-bottom: 2px solid #c0392b;
+}
+
+/* line 32, ../sass/style.scss */
 .row-user {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: space-between;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 3em 0;
+}
+/* line 39, ../sass/style.scss */
+.row-user img {
+  width: 75px;
+  height: auto;
+  border-radius: 5px;
+}
+/* line 44, ../sass/style.scss */
+.row-user a, .row-user a:active, .row-user a:hover, .row-user a:visited {
+  color: #c0392b;
+  text-decoration: none;
+}
+/* line 48, ../sass/style.scss */
+.row-user a:active, .row-user a:hover {
+  color: #2c3e50;
 }
