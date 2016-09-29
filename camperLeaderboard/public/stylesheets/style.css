@@ -82,3 +82,9 @@ body {
 .content {
   background-color: #1abc9c;
 }
+
+/* line 22, ../sass/style.scss */
+.row-user {
+  display: flex;
+  flex-direction: row;
+}

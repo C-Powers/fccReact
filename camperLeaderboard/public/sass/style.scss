@@ -18,3 +18,8 @@ body {
 .content {
   background-color: #1abc9c;
 }
+
+.row-user {
+  display: flex;
+  flex-direction: row;
+}
