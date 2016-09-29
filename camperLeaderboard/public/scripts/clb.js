@@ -30,35 +30,31 @@ const ShowData = React.createClass({
 })
 
 const Body = React.createClass({
-  getInitialState() {
-    return {
-      campers: [],
-      column: "recent"
-    }
+  getInitialState: function() {
+    return (
+       {data: [], column: "recent"}
+    )
   },
-  getData() {
+  componentDidMount: function() {
     $.ajax({
       url: this.props.apiroot+"top/"+this.state.column,
       dataType: 'json',
       cache: false,
       success: function(data) {
-        var users = data;
-        this.setState({users: users});
-        console.log(this.state.users.length)
+        this.setState({data: data});
+        console.log(this.state.data.length)
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.apiroot, status, err.toString());
       }.bind(this)
     });
   },
-  componentDidMount() {
-    this.getData();
-  },
   render () {
     return (
       <div className="content">
-        {JSON.stringify(this.state.campers, null, 2)}
-        <ShowData users={this.state.users}/>
+        {JSON.stringify(this.state.data[0], null, 2)}
+        <p> ====== </p>
+        <ShowData users={this.state.data}/>
       </div>
     )
   }
