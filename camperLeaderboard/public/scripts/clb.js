@@ -5,7 +5,7 @@ const Header = React.createClass({
     return (
       <div className="jumbotron">
         <div className="container">
-           <img className="fcclogo" src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp logo" />
+          <img className="fcclogo" src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp logo" />
           <h1>Top Campers</h1>
           <p>...</p>
           <p><a
