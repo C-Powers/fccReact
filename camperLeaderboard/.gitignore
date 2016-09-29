@@ -1,6 +1,7 @@
 *~
 node_modules
+npm-debug.log
 .DS_Store
 myvenv
 .sass-cache
-config.rb 
+config.rb

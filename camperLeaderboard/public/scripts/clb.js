@@ -28,7 +28,9 @@ const ShowData = React.createClass({
           <div key={user.username} className="row-user">
             <div className="col"> {pos} </div>
             <div className="col"> <img src={user.img}/> </div>
-            <div className="col"> {user.username} </div>
+            <div className="col">
+              <a href= {'https://www.freecodecamp.com/' + user.username} target="_blank"> {user.username} </a>
+            </div>
             <div className="col"> {user.alltime} </div>
           </div>
         )
@@ -36,10 +38,15 @@ const ShowData = React.createClass({
     } else {
       console.log("this.props.data", this.props.data)
       //console.log("this.props.data.length", this.props.data.length)
-      theList = <div> There is No :[ data </div>
+      theList = <div> Loading...? </div>
     }
     return (
       <div className="show-data">
+        <div className="row-user">
+        <div className="col"> # </div>
+        <div className="col"> Camper </div>
+        <div className="col"> Points </div>
+        </div>
         {theList}
       </div>
     )
@@ -69,8 +76,6 @@ const Body = React.createClass({
   render () {
     return (
       <div className="content">
-        {JSON.stringify(this.state.data[0], null, 2)}
-        <p> ====== </p>
         <ShowData data={this.state.data} />
       </div>
     )
