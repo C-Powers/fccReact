@@ -1,0 +1,20 @@
+@import "compass/reset";
+@import "compass/css3";
+
+body {
+  background-color: #bdc3c7;
+}
+
+.jumbotron {
+  background-color: #c0392b !important;
+  .container{
+    .btn {
+      background-color: #bdc3c7;
+      border: none;
+    }
+  }
+}
+
+.content {
+  background-color: #1abc9c;
+}

@@ -1,11 +1,10 @@
-// http://codepen.io/cpowers/pen/GjEkrq
 
 const Header = React.createClass({
   render () {
     return (
       <div className="jumbotron">
         <div className="container">
-          <img className="fcclogo" src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp logo" />
+           <img className="fcclogo" src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp logo" />
           <h1>Top Campers</h1>
           <p>...</p>
           <p><a
@@ -24,7 +23,7 @@ const ShowData = React.createClass({
   render () {
     return (
       <div className="show-data">
-        <p> {this.props.username} </p>
+        <p> {JSON.stringify(this.props.users[0], null, 2)} </p>
       </div>
     )
   }
@@ -45,7 +44,7 @@ const Body = React.createClass({
       success: function(data) {
         var users = data;
         this.setState({users: users});
-        //console.log(data)
+        console.log(this.state.users.length)
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.apiroot, status, err.toString());
@@ -58,11 +57,8 @@ const Body = React.createClass({
   render () {
     return (
       <div className="content">
-        {JSON.stringify(this.state.users, null, 2)}
-        {this.state.users
-          .map((users) => (
-            <ShowData {...users} key={users.username} />
-        ))}
+        {JSON.stringify(this.state.campers, null, 2)}
+        <ShowData users={this.state.users}/>
       </div>
     )
   }
